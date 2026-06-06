@@ -1,0 +1,45 @@
+{
+  "name": "kyndlo",
+  "version": "0.1.5",
+  "description": "Codex-native access to Kyndlo dashboard, events, validation, and agent access workflows.",
+  "author": {
+    "name": "Kyndlo",
+    "email": "support@kyndlo.com",
+    "url": "https://kyndlo.com"
+  },
+  "homepage": "https://kyndlo.com",
+  "repository": "https://github.com/kyndlo/kyndlo-codex-plugins",
+  "license": "UNLICENSED",
+  "keywords": [
+    "kyndlo",
+    "dashboard",
+    "events",
+    "mcp",
+    "agents"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Kyndlo",
+    "shortDescription": "Operate Kyndlo through MCP with a scoped Kyndlo API token.",
+    "longDescription": "Use Kyndlo dashboard, event creation, validation, moderation, agent access, and admin workflows from Codex with token-scoped MCP tools and preview-confirm safety for high-risk actions. Authentication is handled with a scoped Kyndlo API token provided to Codex as KYNDLO_API_TOKEN.",
+    "developerName": "Kyndlo",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://kyndlo.com",
+    "privacyPolicyURL": "https://kyndlo.com/privacy",
+    "termsOfServiceURL": "https://kyndlo.com/terms",
+    "defaultPrompt": [
+      "Use Kyndlo to show my MCP identity and available dashboard permissions. If not connected, ask me to set KYNDLO_API_TOKEN.",
+      "Use Kyndlo to review users and access groups in the dashboard.",
+      "Use Kyndlo to create or validate events with preview-confirm for high-risk changes."
+    ],
+    "brandColor": "#2F5D9B",
+    "composerIcon": "./assets/kyndlo-small.svg",
+    "logo": "./assets/app-icon.png",
+    "screenshots": []
+  }
+}

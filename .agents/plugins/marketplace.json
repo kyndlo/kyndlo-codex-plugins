@@ -1,0 +1,20 @@
+{
+  "name": "kyndlo",
+  "interface": {
+    "displayName": "Kyndlo Plugins"
+  },
+  "plugins": [
+    {
+      "name": "kyndlo",
+      "source": {
+        "source": "local",
+        "path": "./plugins/kyndlo"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
