@@ -53,7 +53,17 @@ Do not paste full API tokens into chat messages, README files, Git commits, scre
 
 ## CLI Fallback
 
-When the `gokyn` CLI is installed, you can validate the same token without storing it globally. `gokyn` can be installed from npm or downloaded as a standalone binary for users who do not have Node.js.
+When the `gokyn` CLI is installed, you can validate the same token without storing it globally. `gokyn` can be installed from npm or as a standalone binary for users who do not have Node.js:
+
+```bash
+curl -fsSL https://kyndlo.com/install.sh | sh
+```
+
+Windows PowerShell:
+
+```powershell
+powershell -c "irm https://kyndlo.com/install.ps1 | iex"
+```
 
 ```bash
 npx gokyn --base-url https://api.kyndlo.com --token "kyndlo_..." whoami --json
