@@ -56,7 +56,7 @@ Do not paste full API tokens into chat messages, README files, Git commits, scre
 When the `gokyn` CLI is installed, you can validate the same token without storing it globally. `gokyn` can be installed from npm or as a standalone binary for users who do not have Node.js:
 
 ```bash
-curl -fsSL https://kyndlo.com/install.sh | sh
+curl -fsSL https://kyndlo.com/install.sh | bash
 ```
 
 Windows PowerShell:
