@@ -9,6 +9,7 @@ Codex-native access to Kyndlo through the production MCP endpoint.
   - `kyndlo-dashboard` for dashboard/admin parity workflows
   - `kyndlo-events` for event creation, tasks, validation, activities, and images
 - Preview-confirm guidance for high-risk dashboard mutations
+- Purpose-built admin event tools for monitoring, enable/disable, cancellation, activity assignment, guided experience generation, and guided assignment
 
 ## Authentication
 
@@ -52,7 +53,7 @@ Do not paste full API tokens into chat messages, README files, Git commits, scre
 
 ## CLI Fallback
 
-When the `gokyn` CLI is installed, you can validate the same token without storing it globally:
+When the `gokyn` CLI is installed, you can validate the same token without storing it globally. `gokyn` can be installed from npm or downloaded as a standalone binary for users who do not have Node.js.
 
 ```bash
 npx gokyn --base-url https://api.kyndlo.com --token "kyndlo_..." whoami --json
@@ -62,6 +63,8 @@ For local API validation, point the CLI at your local API:
 
 ```bash
 npx gokyn --base-url http://localhost:3001 --token "kyndlo_..." whoami --json
+npx gokyn --base-url http://localhost:3001 --token "kyndlo_..." event-admin monitor --issues-only --json
+npx gokyn --base-url http://localhost:3001 --token "kyndlo_..." guided generate --name "Arrival Guide" --event-id <eventId> --json
 ```
 
 ## Validation

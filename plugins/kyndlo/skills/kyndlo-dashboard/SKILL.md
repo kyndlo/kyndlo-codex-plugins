@@ -13,6 +13,16 @@ Prefer the bundled Kyndlo MCP server. It connects to `https://api.kyndlo.com/mcp
 
 Start by calling `whoami` when identity, scope, or environment is uncertain. The MCP server only registers tools allowed by the authenticated token, so visible tools are the effective access level.
 
+Prefer purpose-built tools over raw dashboard paths when they exist:
+
+- `admin-monitor-events` for upcoming event health, readiness issues, attendance, lifecycle, task, and validation monitoring.
+- `admin-get-event-operations-summary` for per-event operations state.
+- `admin-enable-event` and `admin-disable-event` for event active-state changes.
+- `admin-cancel-event` for operational cancellation, attendance cancellation, refunds, and notifications.
+- `admin-assign-event-activities` for replacing event activity assignments.
+- `admin-generate-guided-experience-template` for generated guided experience template drafts.
+- `admin-assign-guided-experience-to-event` and `admin-remove-guided-experience-from-event` for event guided experience overrides.
+
 Use `dashboard-read` for permitted dashboard reads:
 
 ```json
@@ -67,6 +77,11 @@ gokyn whoami --json
 gokyn dashboard read /admin/users --json
 gokyn dashboard mutate /admin/users/admin-invite --method POST --body '{"email":"admin@example.com"}' --preview --json
 gokyn dashboard mutate /admin/users/admin-invite --method POST --body '{"email":"admin@example.com"}' --confirm <confirmationId> --json
+gokyn event-admin monitor --issues-only --json
+gokyn event-admin enable <eventId> --preview --json
+gokyn event-admin enable <eventId> --confirm <confirmationId> --json
+gokyn guided generate --name "Arrival Guide" --event-id <eventId> --json
+gokyn guided assign <eventId> --template-id <templateId> --preview --json
 ```
 
 Use `KYNDLO_API_URL` to point the CLI at a local API, for example `http://localhost:3001`.

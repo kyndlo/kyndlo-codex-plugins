@@ -7,6 +7,20 @@ description: Create, inspect, validate, and maintain Kyndlo events through MCP t
 
 Use this skill when the user asks Codex to create events, validate events, work event creation tasks, upload or generate event images, inspect activities, or manage event/task/validation workflows.
 
+## Admin Operations
+
+When the request involves event operations after creation, prefer these MCP tools:
+
+- `admin-monitor-events` to find under-enrolled, inactive, missing-activity, cancelled, or missing-guided-experience issues.
+- `admin-get-event-operations-summary` before changing a specific event.
+- `admin-enable-event` or `admin-disable-event` to change availability.
+- `admin-assign-event-activities` to replace assigned activities.
+- `admin-generate-guided-experience-template` to draft a guided experience.
+- `admin-assign-guided-experience-to-event` or `admin-remove-guided-experience-from-event` to manage event overrides.
+- `admin-cancel-event` to operationally cancel an event, cancel active attendance, attempt refunds, and notify attendees.
+
+All high-risk admin event tools require preview-confirm. Preview first, explain the impact, then execute with the returned `confirmationId` only after approval.
+
 ## Preferred Flow
 
 1. Call `whoami` first when identity or permissions are uncertain.
@@ -28,6 +42,12 @@ gokyn task campaigns --json
 gokyn task context --campaign "<campaign>" --city "<city>" --json
 gokyn task next --campaign "<campaign>" --city "<city>" --assign --name "<agent-name>" --json
 gokyn validation next --assign --json
+gokyn event-admin monitor --issues-only --json
+gokyn event-admin summary <eventId> --json
+gokyn event-admin assign-activities <eventId> --activity <activityId>:0 --preview --json
+gokyn event-admin cancel <eventId> --reason admin --preview --json
+gokyn guided generate --name "Arrival Guide" --event-id <eventId> --json
+gokyn guided assign <eventId> --template-id <templateId> --preview --json
 ```
 
 Create physical events with explicit flags rather than large JSON blobs when possible:
