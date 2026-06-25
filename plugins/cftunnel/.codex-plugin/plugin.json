@@ -1,0 +1,42 @@
+{
+  "name": "cftunnel",
+  "version": "0.1.0",
+  "description": "Codex guidance for operating and maintaining the Kyndlo Cloudflare Tunnel helper.",
+  "author": {
+    "name": "Kyndlo",
+    "email": "support@kyndlo.com",
+    "url": "https://kyndlo.com"
+  },
+  "homepage": "https://github.com/kyndlo/cftunnel",
+  "repository": "https://github.com/kyndlo/cftunnel",
+  "license": "UNLICENSED",
+  "keywords": [
+    "kyndlo",
+    "cloudflare",
+    "tunnel",
+    "cloudflared",
+    "developer-tools"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Cftunnel",
+    "shortDescription": "Work with Kyndlo Cloudflare tunnel tooling from Codex.",
+    "longDescription": "Use Codex to inspect, configure, troubleshoot, and maintain Kyndlo's Cloudflare Tunnel helper while preserving token safety and confirming changes that affect Cloudflare resources.",
+    "developerName": "Kyndlo",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://kyndlo.com",
+    "privacyPolicyURL": "https://kyndlo.com/privacy",
+    "termsOfServiceURL": "https://kyndlo.com/terms",
+    "defaultPrompt": [
+      "Use Cftunnel to inspect my tunnel setup.",
+      "Use Cftunnel to troubleshoot a Cloudflare tunnel.",
+      "Use Cftunnel to review a tunnel config safely."
+    ],
+    "brandColor": "#F38020",
+    "screenshots": []
+  }
+}
